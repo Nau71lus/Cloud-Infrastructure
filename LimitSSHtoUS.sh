@@ -4,7 +4,7 @@ ALLOW_COUNTRIES="US"
 
 if [ $# -ne 1 ]; then
   echo "Usage:  `basename $0` <ip>" 1>&2
-  exit 0 # return true in case of config issue
+  exit 0
 fi
 
 COUNTRY=`/usr/local/bin/geoiplookup $1 | awk -F ": " '{ print $2 }' | awk -F "," '{ print $1 }' | head -n 1`
